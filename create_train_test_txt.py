@@ -61,13 +61,13 @@ for item_train_test_name in train_test_name:
         with open(train_test_txt_name, 'w') as w_tdf:
             # 一行一行写
             for item in eval(list_name):
-                w_tdf.write(pic_absolute_path+item+'\n')
+                w_tdf.write(pic_absolute_path+item+'.png\n')
         # 循环写Car Pedestrian Cyclist
         for item_category_name in category_name:
             category_txt_name = Main_path + item_category_name + '_' + item_train_test_name + '.txt'
             with open(category_txt_name, 'w') as w_tdf:
                 # 一行一行写
                 for item in eval(list_name):
-                    w_tdf.write(pic_absolute_path + item+' '+ get_sample_value(item, item_category_name)+'\n')
+                    w_tdf.write(pic_absolute_path + item+' '+ get_sample_value(item, item_category_name)+'.png\n')
     except IOError as ioerr:
         print('File error:'+str(ioerr))

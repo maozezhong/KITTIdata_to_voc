@@ -3,8 +3,12 @@
 # 不过亲测没什么问题
 import glob
 import string
+import os
 
-txt_list = glob.glob('./training/label_2/*.txt') # 存储Labels文件夹所有txt文件路径
+##备份一下
+os.system('cp -rf '+os.getcwd()+'/Labels '+os.getcwd()+'/Labels_ori')
+
+txt_list = glob.glob('./Labels/*.txt') # 存储Labels文件夹所有txt文件路径
 def show_category(txt_list):
     category_list= []
     for item in txt_list:
